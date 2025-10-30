@@ -1,0 +1,22 @@
+function childcomp(onUpdatemsg){
+	const[inputmessage,setInputMessage]  = useState(null);
+
+	
+const handleChange = (event) => {
+    setInputMessage(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    onUpdateMessage(inputMessage);
+    setInputMessage(''); // Clear the input field after updating
+  };	
+	return(
+	<>
+		<div>
+			<input type="text" value={e.target.inputmessage} onclick={handleChange} / >
+			<input type ="submit" onclick={handlesubmit}>
+			
+		</div>		
+	</>
+);
+};

@@ -1,0 +1,35 @@
+function todolist(){
+
+	const[todos, settodos] = usestate(()=>{
+	const savedtodos = localstorage.getItem(todos);
+	return savedtodos ? JSON.parse(savedtodos) : [];
+});
+
+const addtodo =(text)=> {
+	settodos([...todos,{id, title,completed:false}] );
+};
+useEffect(()=>{
+	localstorage.setItem('todos',JSON.stringify(todos));
+},[todos]);
+return(
+<>
+<table>
+<tr>
+<td> id</td>
+<td> title</td>
+<td> completed</td>
+<td>Actions</td>
+</tr>
+
+</table>
+	{savedtodos.map((t)=>{
+			<p key = {t.id}>{t.id}</p>
+			<p>{t.title}</p>
+			<p>{t.completed}</p>
+			
+		}
+
+</>
+)
+
+}

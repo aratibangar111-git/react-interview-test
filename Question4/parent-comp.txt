@@ -1,0 +1,16 @@
+function parentcomp(){
+	const[message,setmessage]  = useState(null);
+
+	const updatemsg=(newmsg)=>{
+		setmessage(newmsg);
+	}
+	
+	return(
+	<>
+		<div>
+			<p>Message:{message}</p>
+			<ChildComponent onUpdatemsg ={updatemsg} />
+		</div>		
+	</>
+);
+};
